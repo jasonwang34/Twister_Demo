@@ -1,21 +1,30 @@
-# vuewebpack
+Vue.js shopping website demo
 
-> A Vue.js project
+To use vue.js build a simple shopping website
 
-## Build Setup
+Features:
 
-``` bash
-# install dependencies
-npm install
+  1. Home (with animation fadein/out effect)
+  
+  2. Shop (display products and checkout)
+  
+  3. About (display Twister culture and leadership)
+  
+  4. Navbar (including cart, sidebar)
+  
+  5. Administration (Orderlist, productlist, coupon)
+  
+Plugins:
 
-# serve with hot reload at localhost:8080
-npm run dev
+  - VeeValidate
+  - Vue-axios
+  - Vue-loading-overlay
 
-# build for production with minification
-npm run build
+Resources:
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+  - Bootstrape 4
+  - Fontawesome
+  - Upleash 
+  - hexschool
+  
+  * This website only for personal purpose 
