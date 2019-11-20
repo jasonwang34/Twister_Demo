@@ -1,0 +1,29 @@
+.productpage{
+    background: #000;
+    padding: 3% 25% 5% 25%;
+    .content{
+        line-height: 1.5em;
+        white-space: pre;
+    }
+}
+.detail{
+    color:#fff;
+}
+
+@media (max-width:816px){
+    .productpage{
+        padding: 2%;
+    }
+    .product-img{
+        flex:90%;
+        max-width: 100%;
+    }
+    .detail{
+        flex:90%;
+        max-width: 100%;
+    }
+    .content{
+        padding-left:0;
+    }
+}
+

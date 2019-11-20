@@ -1,0 +1,92 @@
+.title{
+    background-image: url(https://images.unsplash.com/photo-1537498425277-c283d32ef9db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1357&q=80);
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    color:#fff;
+    padding:12%;
+    
+    h1{
+        font-size:56px;
+        animation: fadein 2s;
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+         -ms-animation: fadein 2s; /* Internet Explorer */
+          -o-animation: fadein 2s; /* Opera < 12.1 */
+    }
+    p{
+        font-size:23px;
+        animation: fadein 3s;
+        -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 3s; /* Firefox < 16 */
+         -ms-animation: fadein 3s; /* Internet Explorer */
+          -o-animation: fadein 3s; /* Opera < 12.1 */
+    }
+}
+
+.quote-wrap{
+    position: absolute;
+    z-index:1;
+    border-radius:.3rem;
+    //background:#F2F3F4;
+    //padding:30px;
+    opacity: 0.7;
+    // bottom: 12%;
+}
+
+.bottom-line{
+    height: 1px;
+    background:#000;
+    width: 100%;
+}
+
+.content img {
+    max-width:30%;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+    &:hover{
+        transform:scale(1.1,1.1);
+    }
+}
+
+.shop{
+    background-image: url(https://images.unsplash.com/photo-1571126770247-9a99e5f7eff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2000&q=80);
+    background-position: bottom center;
+    background-size: cover;
+    overflow: hidden;
+    padding:7%;
+}
+
+.animatedSet {
+    opacity: 0;
+    transition: all 1.5s;
+    transform: translateY(50px);
+}
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width:816px){
+    .content img {
+        max-width:40%;
+    }
+    .text-wrap{
+        max-width:60%;
+        opacity: 1;
+    }
+    .title{
+        background-size: 125%;
+    }
+    .quote-wrap{
+        max-width: 75%;
+        background:#F2F3F4;
+    }
+}
+
+
+    
+
+    
+

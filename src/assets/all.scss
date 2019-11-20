@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "~bootstrap/scss/bootstrap";
+
+@import "./reset.scss";
+@import "./_dashboard";
+@import "./_navbar";
+@import "./_home";
+@import "./products";
+@import "./product";
+@import "./checkout";
+@import "./about";
+@import "./footer";

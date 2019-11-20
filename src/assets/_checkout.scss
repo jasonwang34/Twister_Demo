@@ -1,0 +1,41 @@
+.title-checkout{
+    background:#000;
+    background-attachment: fixed;
+    overflow: hidden;
+    color:#fff;
+    padding:3%;
+    h1{
+        font-size:56px;
+    }
+}
+
+.content-checkout{
+    padding:3% 20%;
+}
+
+
+@media (max-width:1024px) and (min-width:817px){
+    .title-checkout{
+        padding:12%;
+    }
+    
+    .content-checkout{
+        padding:3% 3%;
+    }
+
+}
+
+@media (max-width:816px){
+    .title-checkout{
+        padding:12%;
+        h1{
+            font-size:36px;
+        }
+    }
+    .content-checkout{
+        padding:3% 0;
+    }
+    .img-checkout{
+        display: none;
+    }
+}
