@@ -60,7 +60,7 @@
                 <tbody>
                     <tr v-for="item in cart.carts" :key="item.id" v-if="cart.carts">
                     <td>
-                    <img :src="item.product.imageUrl" class="img-fluid img-checkout" alt="img-product" style="height:60px;">
+                    <div class="img-checkout" :style="`background-image:url('${item.product.imageUrl}');width:100px;height:100px;`"></div>
                     </td>
                     <td class="align-middle">
                         {{ item.product.title }}
@@ -72,7 +72,8 @@
                     <td class="align-middle">{{ item.final_total | currency}}</td>                    
                     <td class="align-middle">
                         <button type="button" class="btn btn-outline-danger btn-sm" @click="removeCartItem(item.id)">
-                        <i class="far fa-trash-alt"></i>
+                         <i v-if="!status.isLoading" class="far fa-trash-alt"></i>
+                        <i v-else class="fas fa-spinner fa-spin"></i>
                         </button>
                     </td>
                     </tr>
@@ -88,6 +89,7 @@
                     </tr>
                 </tfoot>
             </table>
+            <p class="text-danger text-center">Apply "NOV30" for special discount</p>
             <div class="input-group mb-3 input-group-sm">
                 <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
                 <div class="input-group-append">
@@ -135,6 +137,9 @@ export default{
                 },
                 message: '',
             },
+            status:{
+                isLoading: false,
+            }
         };
     },
     methods:{
@@ -149,11 +154,11 @@ export default{
         removeCartItem(id){
             const url = `${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/cart/${id}`;
             const vm = this;
-
+            vm.status.isLoading = true;
             this.$http.delete(url).then(() => {
             vm.$bus.$emit("getCart");
             vm.getCart();
-            
+            vm.status.isLoading = false;
             });
         },
         addCoupon(){

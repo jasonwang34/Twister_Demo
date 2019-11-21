@@ -4,13 +4,18 @@
     overflow: hidden;
     color:#fff;
     padding:3%;
+
     h1{
         font-size:56px;
     }
 }
 
 .content-checkout{
-    padding:3% 20%;
+    padding:3% 20%;    
+    .img-checkout{
+        background-position: center center;
+        background-size: cover;
+    }
 }
 
 

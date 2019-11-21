@@ -15,10 +15,11 @@
     <section>
         <div class="row products align-items-center text-center justify-content-center">
             <div class="mt-3 card" v-show="item.is_enabled" v-for="item in filteredProducts" :key="item.id" @click="toProduct(item.id)">
-                <img :src="item.imageUrl" class="card-img" alt="img-product">
+                <div class="card-img" :style="`background-image:url('${item.imageUrl}');`"></div>
+                <!--<img :src="item.imageUrl" class="card-img" alt="img-product">-->
                 <div class="card-body">
-                <h5 class="card-title">{{item.title}}</h5>
-                <p class="card-text"><small class="text-muted">${{item.price}}</small></p>
+                <div class="card-title">{{item.title}}</div>
+                <div class="card-text"><small class="text-muted">${{item.price}}</small></div>
                 </div>
             </div>
         </div>

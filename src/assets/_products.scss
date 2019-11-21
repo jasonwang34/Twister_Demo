@@ -66,6 +66,9 @@
         }
         .card-body{
             transition: all 1s ease-out;
+            .card-title{
+                padding: .5rem;
+            }
         }
         .card-img{
             width: 100%;
@@ -73,6 +76,8 @@
             min-width: 200px;
             min-height: 200px;   
             transition: all 1s ease-out;
+            background-size:cover;
+            background-position: 50%;
             &:hover{
                 transform:scale(1.1);
             }

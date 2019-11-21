@@ -95,7 +95,7 @@
 
 .hmenu{
     transition: all .5s;
-    transform: translateX(-100%);
+    transform: translateX(-150%);
     background:#000;
     width: 28%;
     font-size: 56px;
@@ -111,7 +111,11 @@
 .navbar-show{
     background:#272727;
     box-shadow: 0px 0px 25px 3px rgba(0,0,0,0.7);
-    opacity: 0.8;
+}
+
+.scroll{
+    max-height: 40vh;
+    overflow-y: auto;
 }
 
 .cart-dropdown{
@@ -122,6 +126,10 @@
     z-index:1001;
     width:400px;
     position: relative;
+    .img-cart{
+        background-position:center center;
+        background-size: cover;
+    }
     &.show{
         display:block;
         position: absolute;

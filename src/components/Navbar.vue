@@ -26,13 +26,15 @@
                 <button type="button" class="cartBtn" @click="cartToggle">
                     <i class="fas fa-shopping-cart"><span v-if="cart.carts.length">{{cart.carts.length}}</span></i>
                 </button>
-                    <div class="cart-dropdown p-1 align-items-center justify-content-center">
+                    <div class="cart-dropdown p-1 align-items-center justify-content-center" style="z-index:1001;">
+                    <h5 class="text-dark text-center">Shopping Cart</h5>
                         <table class="table">
-                            <th colspan="4" class="text-center"><h5>Shopping Cart</h5></th>
+                        <div class="scroll">
+                         <div class="text-center text-danger" v-if="cart.carts.length < 1">Shopping cart is empty.</div>
                             <tbody>
                                 <tr v-for="item in cart.carts" :key="item.id" v-if="cart.carts">
                                 <td class="align-middle">
-                                <img :src="item.product.imageUrl" class="img-fluid" style="height:60px" alt="...">
+                                <div class="img-cart" :style="`background-image:url('${item.product.imageUrl}');width: 60px;height:60px; background-size:cover;`"></div>
                                 </td>
                                 <td class="align-middle">
                                 {{ item.product.title }}
@@ -44,16 +46,17 @@
                                 </td> 
                                 </tr>
                                 <tr>
-                                <td colspan="4" class="text-right">總計 {{ cart.total | currency }}</td>
+                                <td colspan="4" class="text-right" v-if="cart.carts.length">總計 {{ cart.total | currency }}</td>
                                 </tr>
                                 <tr v-if="cart.final_total !== cart.total">
-                                <td colspan="4" class="text-right text-success">折扣價</td>
+                                <td colspan="4" class="text-right text-success" v-if="cart.carts.length">折扣價</td>
                                 <td class="text-right text-success">{{ cart.final_total | currency }}</td>
                                 </tr>
                             </tbody>
+                        </div>
                             <tfoot>
                                 <tr>
-                                <td colspan="5" class="text-right"><button class="btn btn-primary" @click="toCheckout">結帳去</button></td>  
+                                <td colspan="5" class="text-right" v-if="cart.carts.length"><button class="btn btn-primary" @click="toCheckout">結帳去</button></td>  
                                 </tr>
                             </tfoot>
                         </table>
